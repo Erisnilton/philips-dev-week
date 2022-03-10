@@ -11,5 +11,13 @@
 
     <artifactId>repository</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.philips</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
