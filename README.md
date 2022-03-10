@@ -17,6 +17,7 @@ O objetivo principal da Philips Dev Week é desenvolver, durante 4 dias, um site
 ### Tarefas
 - [X] Organização da arquiterura
 - [X] Configuração do Banco de Dados
+- [X] Criação do modelo de domímio
 - [ ] Deploy com o Git Actions (Deploy Continuous Integration)
 
 
