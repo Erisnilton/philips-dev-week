@@ -1,9 +1,11 @@
 package com.philips.week.controller.incidenciaexame;
 
+import com.philips.week.controller.faixaetaria.response.FindByIdentifierFaixaEtariaResponse;
 import com.philips.week.controller.incidenciaexame.request.IncidenciaExameRequest;
 import com.philips.week.controller.incidenciaexame.response.IncidenciaExameResponse;
 import com.philips.week.core.us.incidenciaexame.CreateIncidenciaExameUS;
 import com.philips.week.core.us.incidenciaexame.DeleteIncidenciaExameUS;
+import com.philips.week.core.us.incidenciaexame.FindByIdentifierIncidenteExameUS;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -19,6 +21,7 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 @Tag(name = "Incidencias Exames", description = "The Incidência API")
 public record IncidenciaExameController(
         CreateIncidenciaExameUS createIncidenciaExameUS,
+        FindByIdentifierIncidenteExameUS findByIdentifierIncidenteExameUS,
         DeleteIncidenciaExameUS deleteIncidenciaExameUS
 )  {
 
@@ -29,6 +32,14 @@ public record IncidenciaExameController(
 
         var incidenteExame = createIncidenciaExameUS.apply(request.toIncidenciaExame());
         return  IncidenciaExameResponse.fromIncidenciaExame(incidenteExame);
+
+    }
+
+    @GetMapping("{identifier}")
+    @Operation(summary = "Find a incidencia exame by identifier", tags = {"Incidencias Exames"})
+    public IncidenciaExameResponse findByIdentifier(@PathVariable String identifier) {
+
+        return findByIdentifierIncidenteExameUS.apply(identifier, IncidenciaExameResponse.class);
 
     }
 
