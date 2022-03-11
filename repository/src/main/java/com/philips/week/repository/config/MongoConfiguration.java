@@ -10,7 +10,7 @@ public class MongoConfiguration extends AbstractMongoClientConfiguration {
 
     private static final String DATABASE_NAME = "philips-dev-week";
 
-    public static final String DB_URL = "mongodb+srv://erisnilton:B1s086bNWiKoCJ5g@cluster0.etev7.mongodb.net/";
+    public static final String DB_URL = "mongodb+srv://erisnilton:lJuE2OBodmj7HL4I@cluster0.w0ype.mongodb.net/";
 
     @Override
     protected String getDatabaseName() {
