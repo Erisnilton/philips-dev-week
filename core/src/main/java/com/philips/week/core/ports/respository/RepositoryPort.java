@@ -1,4 +1,4 @@
-package com.philips.week.core.ports.resposotory;
+package com.philips.week.core.ports.respository;
 
 import java.util.Optional;
 

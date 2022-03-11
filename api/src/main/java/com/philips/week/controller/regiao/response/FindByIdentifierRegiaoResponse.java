@@ -1,7 +1,8 @@
-package com.philips.week.controller.faixaetaria.response;
+package com.philips.week.controller.regiao.response;
 
-public record FindByIdentifierFaixaEtariaResponse(
-        Integer faixa_n,
-        Integer faixa_i,
-        String descricao) {
+public record FindByIdentifierRegiaoResponse(
+        String identifier,
+        String regiao,
+        Integer total_exames
+) {
 }

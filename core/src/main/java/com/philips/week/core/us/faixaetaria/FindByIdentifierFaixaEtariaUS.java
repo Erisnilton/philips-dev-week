@@ -1,6 +1,6 @@
 package com.philips.week.core.us.faixaetaria;
 
-import com.philips.week.core.ports.resposotory.faixaetaria.FaixaEtariaRepositoryPort;
+import com.philips.week.core.ports.respository.faixaetaria.FaixaEtariaRepositoryPort;
 import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;

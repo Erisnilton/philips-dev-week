@@ -1,7 +1,7 @@
 package com.philips.week.core.us.regiao;
 
 import com.philips.week.core.domain.Regiao;
-import com.philips.week.core.ports.resposotory.regiao.RegiaoRepositoryPort;
+import com.philips.week.core.ports.respository.regiao.RegiaoRepositoryPort;
 import org.springframework.stereotype.Service;
 
 @Service

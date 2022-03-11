@@ -2,8 +2,10 @@ package com.philips.week.controller.regiao;
 
 import com.philips.week.controller.regiao.request.CreateRegiaoRequest;
 import com.philips.week.controller.regiao.response.CreateRegiaoResponse;
+import com.philips.week.controller.regiao.response.FindByIdentifierRegiaoResponse;
 import com.philips.week.core.us.regiao.CreateRegiaoUS;
 import com.philips.week.core.us.regiao.DeleteRegiaoUS;
+import com.philips.week.core.us.regiao.FindByIdentifierRegiaoUS;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +18,11 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 @RestController
 @RequestMapping("/regioes")
 @Tag(name = "Regiões", description = "the Região API")
-public record RegiaoController(CreateRegiaoUS createRegiaoUS, DeleteRegiaoUS deleteRegiaoUS) {
+public record RegiaoController(
+        CreateRegiaoUS createRegiaoUS,
+        DeleteRegiaoUS deleteRegiaoUS,
+        FindByIdentifierRegiaoUS findByIdentifierRegiaoUS
+) {
 
     @PostMapping
     @ResponseStatus(CREATED)
@@ -26,6 +32,14 @@ public record RegiaoController(CreateRegiaoUS createRegiaoUS, DeleteRegiaoUS del
         var regiao = createRegiaoUS.apply(request.toRegiao());
 
         return CreateRegiaoResponse.fromRegiao(regiao);
+
+    }
+
+    @GetMapping("{identifier}")
+    @Operation(summary = "Find a Age Group by identifier", tags = {"Regiões"})
+    public FindByIdentifierRegiaoResponse findByIdentifier(@PathVariable String identifier) {
+
+        return findByIdentifierRegiaoUS.apply(identifier, FindByIdentifierRegiaoResponse.class);
 
     }
 
