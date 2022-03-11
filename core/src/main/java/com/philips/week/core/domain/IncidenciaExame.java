@@ -13,13 +13,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @EqualsAndHashCode(callSuper = true)
 public class IncidenciaExame extends AbstractEntity {
 
-    private Integer Regiao_id;
+    private Integer regiao_id;
 
-    private Integer Mes;
+    private Integer mes;
 
-    private Long Faixa_id;
+    private Integer faixa_id;
 
-    private Integer Qnt_exames;
+    private Integer qnt_exames;
 
     public static IncidenciaExame create() {
 
