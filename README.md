@@ -2,6 +2,10 @@
 
 O objetivo principal da Philips Dev Week é desenvolver, durante 4 dias, um sitema de Consulta para Tratamento de Câncer de Mama do SUS.
 
+# [:link: Demo](https://philips-dev-week.herokuapp.com)
+[:link: Documentação da API](https://philips-dev-week.herokuapp.com/swagger-ui/index.html)
+
+
 ### Desafio: 
 - Desenvolver, junto com experts, uma API Restfull com Java e Springboot, acessando os dados de Câncer de Mama (base de dados - DATASUS).
 
