@@ -27,7 +27,7 @@ public record IncidenciaExameController(
 
     @PostMapping
     @ResponseStatus(CREATED)
-    @Operation(summary = "Create a new Incidente Exame", tags = "{Incidencias Exames}")
+    @Operation(summary = "Create a new Incidente Exame")
     public IncidenciaExameResponse create(@RequestBody @Valid IncidenciaExameRequest request) {
 
         var incidenteExame = createIncidenciaExameUS.apply(request.toIncidenciaExame());
@@ -36,7 +36,7 @@ public record IncidenciaExameController(
     }
 
     @GetMapping("{identifier}")
-    @Operation(summary = "Find a incidencia exame by identifier", tags = {"Incidencias Exames"})
+    @Operation(summary = "Find a incidencia exame by identifier")
     public IncidenciaExameResponse findByIdentifier(@PathVariable String identifier) {
 
         return findByIdentifierIncidenteExameUS.apply(identifier, IncidenciaExameResponse.class);
@@ -45,7 +45,7 @@ public record IncidenciaExameController(
 
     @DeleteMapping("{identifier}")
     @ResponseStatus(NO_CONTENT)
-    @Operation(summary = "Delete a Incidente Exame", tags = "{Incidencias Exames}")
+    @Operation(summary = "Delete a Incidente Exame")
     public void delete(@PathVariable String identifier) {
         deleteIncidenciaExameUS.apply(identifier);
     }
