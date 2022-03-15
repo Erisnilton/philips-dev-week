@@ -1,0 +1,4 @@
+com/philips/week/repository/config/MongoConfiguration.class
+com/philips/week/repository/config/IncidenciaExameRepository.class
+com/philips/week/repository/config/FaixaEtariaRepository.class
+com/philips/week/repository/config/RegiaoRepository.class
