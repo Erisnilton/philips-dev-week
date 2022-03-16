@@ -9,6 +9,6 @@ import java.util.NoSuchElementException;
 public record FindByIdentifierIncidenteExameUS(IncidenciaExamePort repository) {
 
     public  <S> S apply(String identifier, Class<S> projection) {
-        return repository.findByIdentifier(identifier, projection).orElseThrow(() -> new NoSuchElementException("Incidência Exame não encontrada"));
+        return repository.findByIdentifierAndDeletedFalse(identifier, projection).orElseThrow(() -> new NoSuchElementException("Incidência Exame não encontrada"));
     }
 }

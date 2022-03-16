@@ -31,6 +31,7 @@ O objetivo principal da Philips Dev Week é desenvolver, durante 4 dias, um site
 - [X] Criar uma nova faixa etária
 - [X] Remover uma faixa etária
 - [X] Buscar uma faixa etária pelo identifiers
+- [X] Lista todas as faixa etárias
 - [ ] Buscar as faixas etárias por filtro
 - [X] Criar uma nova região
 - [X] Remover uma região

@@ -10,7 +10,7 @@ public record FindByIdentifierFaixaEtariaUS(FaixaEtariaRepositoryPort repository
 
     public <S> S apply(String identifier, Class<S> projection) {
 
-        return repository.findByIdentifier(identifier, projection).orElseThrow(() -> new NoSuchElementException("Faixa etária não encontrada."));
+        return repository.findByIdentifierAndDeletedFalse(identifier, projection).orElseThrow(() -> new NoSuchElementException("Faixa etária não encontrada."));
 
     }
 }
