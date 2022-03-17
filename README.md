@@ -35,11 +35,12 @@ O objetivo principal da Philips Dev Week é desenvolver, durante 4 dias, um site
 - [ ] Buscar as faixas etárias por filtro
 - [X] Criar uma nova região
 - [X] Remover uma região
-- [X] Buscar uma região pelo id
+- [X] Buscar uma região pelo identifiers
+- [X] Lista todas as regiões
 - [ ] Buscar as regiões por filtro
 - [X] Criar uma nova incidencia de exame
 - [X] Remover uma incidencia de exame
-- [X] Buscar uma incidencia de exame pelo id
+- [X] Buscar uma incidencia de exame pelo identifiers
 - [ ] Buscar todas as incidencias de exame
 
 
