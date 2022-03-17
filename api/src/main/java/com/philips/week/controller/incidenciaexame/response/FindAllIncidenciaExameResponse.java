@@ -2,9 +2,7 @@ package com.philips.week.controller.incidenciaexame.response;
 
 import com.philips.week.core.domain.IncidenciaExame;
 
-import javax.validation.constraints.NotNull;
-
-public record IncidenciaExameResponse(
+public record FindAllIncidenciaExameResponse(
 
         String identifier,
 
@@ -17,9 +15,9 @@ public record IncidenciaExameResponse(
         Integer qnt_exames
 ) {
 
-    public static IncidenciaExameResponse fromIncidenciaExame(IncidenciaExame incidenciaExame) {
+    public static FindAllIncidenciaExameResponse fromIncidenciaExame(IncidenciaExame incidenciaExame) {
 
-        return new IncidenciaExameResponse(
+        return new FindAllIncidenciaExameResponse(
 
                 incidenciaExame.identifier(),
 

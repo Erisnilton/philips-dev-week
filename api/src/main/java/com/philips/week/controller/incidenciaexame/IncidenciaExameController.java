@@ -1,17 +1,20 @@
 package com.philips.week.controller.incidenciaexame;
 
-import com.philips.week.controller.faixaetaria.response.FindByIdentifierFaixaEtariaResponse;
 import com.philips.week.controller.incidenciaexame.request.IncidenciaExameRequest;
-import com.philips.week.controller.incidenciaexame.response.IncidenciaExameResponse;
+import com.philips.week.controller.incidenciaexame.response.CreateIncidenciaExameResponse;
+import com.philips.week.controller.incidenciaexame.response.FindAllIncidenciaExameResponse;
+import com.philips.week.controller.regiao.response.FindByIdentifierRegiaoResponse;
 import com.philips.week.core.us.incidenciaexame.CreateIncidenciaExameUS;
 import com.philips.week.core.us.incidenciaexame.DeleteIncidenciaExameUS;
+import com.philips.week.core.us.incidenciaexame.FindAllIncidenciaExamesUS;
 import com.philips.week.core.us.incidenciaexame.FindByIdentifierIncidenteExameUS;
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+
+import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
@@ -21,6 +24,7 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 @Tag(name = "Incidencias Exames", description = "The Incidência API")
 public record IncidenciaExameController(
         CreateIncidenciaExameUS createIncidenciaExameUS,
+        FindAllIncidenciaExamesUS findAllIncidenciaExamesUS,
         FindByIdentifierIncidenteExameUS findByIdentifierIncidenteExameUS,
         DeleteIncidenciaExameUS deleteIncidenciaExameUS
 )  {
@@ -28,18 +32,27 @@ public record IncidenciaExameController(
     @PostMapping
     @ResponseStatus(CREATED)
     @Operation(summary = "Create a new Incidente Exame")
-    public IncidenciaExameResponse create(@RequestBody @Valid IncidenciaExameRequest request) {
+    public CreateIncidenciaExameResponse create(@RequestBody @Valid IncidenciaExameRequest request) {
 
         var incidenteExame = createIncidenciaExameUS.apply(request.toIncidenciaExame());
-        return  IncidenciaExameResponse.fromIncidenciaExame(incidenteExame);
+        return  CreateIncidenciaExameResponse.fromIncidenciaExame(incidenteExame);
 
+    }
+
+    @GetMapping
+    @Operation(summary = "List all Incidencias Exames")
+    public List<FindAllIncidenciaExameResponse> findAll() {
+        return findAllIncidenciaExamesUS.apply()
+                .stream()
+                .map(FindAllIncidenciaExameResponse::fromIncidenciaExame)
+                .toList();
     }
 
     @GetMapping("{identifier}")
     @Operation(summary = "Find a incidencia exame by identifier")
-    public IncidenciaExameResponse findByIdentifier(@PathVariable String identifier) {
+    public FindByIdentifierRegiaoResponse findByIdentifier(@PathVariable String identifier) {
 
-        return findByIdentifierIncidenteExameUS.apply(identifier, IncidenciaExameResponse.class);
+        return findByIdentifierIncidenteExameUS.apply(identifier, FindByIdentifierRegiaoResponse.class);
 
     }
 
