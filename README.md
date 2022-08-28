@@ -16,7 +16,7 @@ O objetivo principal da Philips Dev Week é desenvolver, durante 4 dias, um site
 - Utilização da biblioteca __lombok__ para melhorar a legibilidade do código;
 - Pequenas melhorias durante a refatoração de código;
 - Utilização dos Spring Validation para melhorar a consistência dos dados;
-- Implentação de logs para registrar as execuções de operações importantes;
+- Implementação de logs para registrar as execuções de operações importantes;
 - Auditoria básica para manter melhor controle sobre a criação de entidades (Obs: como não há mecânismos de autencicação/autorização neste projeto, a auditoria resumiu-se apenas em controlar data e hora de criação e atualização das entidades do sistema).
 
 ### Tarefas
